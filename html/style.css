@@ -39,7 +39,8 @@ li{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	transition: ease-in-out 0.5s;
+	transition: ease-in-out 0.2s;
+	border-radius: 2px;
 }
 
 li:hover{
