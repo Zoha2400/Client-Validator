@@ -1,0 +1,22 @@
+{
+  "name": "client_validator",
+  "version": "1.0.0",
+  "description": "Client validator from server's side, created by NodeJS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Zoha2400/Client-Validator.git"
+  },
+  "author": "Zoha2400",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zoha2400/Client-Validator/issues"
+  },
+  "homepage": "https://github.com/Zoha2400/Client-Validator#readme",
+  "dependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
