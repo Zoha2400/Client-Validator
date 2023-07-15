@@ -11,26 +11,34 @@ const PORT = 3000;
 const server = http.createServer((req, res) => {
   res.setHeader('Content-Type', 'text/html');
 
-	  if (req.url !== '/reg.html') {
-	    res.statusCode = 302;
-	    res.setHeader('Location', 'reg.html');
-	    res.end();
-	  } 
+  	
 
-	  else if (req.url === '/reg.html') {
-	   	htmlSender.fsreader(html + '/reg.html', res);
+  	// htmlSender.fsreader(html + 'style.css', res);
+
+	  // if (req.url !== '/reg.html') {
+	  //   res.statusCode = 302;
+	  //   res.setHeader('Location', 'reg.html');
+	  //   res.end();
+	  // } 
+
+	  if (req.url === '/reg.html') {
+	   	htmlSender.fsreader(html, '/reg.html', res);
 	  }
 
 	  else if (req.url === '/home.html') {
-	   	htmlSender.fsreader(html + '/home.html', res);
+	   	htmlSender.fsreader(html, '/home.html', res);
 	  }
 
 	  else if (req.url === '/about.html') {
-	 	htmlSender.fsreader(html + '/about.html', res);
+	 	htmlSender.fsreader(html, '/about.html', res);
+	  }
+
+	  else if (req.url === '/account.html') {
+	 	htmlSender.fsreader(html, '/account.html', res);
 	  }
 
 	  else{
-		htmlSender.fsreader(html + '/err.html', res);
+		htmlSender.fsreader(html, '/err.html', res);
 	  }
 
   	// let data = {

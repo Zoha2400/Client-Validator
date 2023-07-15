@@ -1,15 +1,27 @@
 const fs = require('fs');
 
-module.exports.fsreader = function(path, res) {
+module.exports.fsreader = function(path, file, res) {
 
-	fs.readFile(path, (err, data) => {
-		if(err){
+	fs.readFile(path + '/style.css', (errcss, css) => {
+		if(errcss){
 			res.statusCode = 500;
 			res.end('Not found!');
-		}else{
-			res.statusCode = 200;
-			res.end(data);
 		}
+
+		fs.readFile(path + file, (errhtml, html) =>{
+			if(errcss){
+				res.statusCode = 500;
+				res.end('Not found!');
+			}
+		    
+		    res.writeHead(200, { 'Content-Type': 'text/html' });
+    		res.write(`<style>${css}</style>`);
+		    res.write(html);
+		    res.end();
+
+
+		});
+
 	});
 }
 
