@@ -8,16 +8,63 @@
 </head>
 <body>
 	
-	<div class="container">
-		
-		<div class="registration-block">
+	<header>
 			
-			Home
+		<ul>
+			<a href="http://localhost:3000/home.html">
+				<li>Home</li>
+			</a>
+			<a href="http://localhost:3000/account.html">
+				<li>Account</li>
+			</a>
+			<a href="http://localhost:3000/about.html">
+				<li>About</li>
+			</a>
+			<a href="http://localhost:3000/reg.html">
+				<li>Reg/Log</li>			
+			</a>
+		</ul>
+
+		</header>
+
+	<div class="container-wrapper">
+		
+
+		<div class="container">
+		
+			<div class="home-block">
+				
+				<h4>While I am creating the project - read a joke about Chuck Norris!</h4>
+
+				<p class="joke"></p>
+
+			</div>			
 
 		</div>
 
 	</div>
 
+
+	<footer>
+			
+	<p>Created by <a target="_blank" href="https://github.com/Zoha2400/Client-Validator">Zoha2400</a></p>
+
+
+	</footer>
+
+
+	<script>
+		let joke = document.querySelector('.joke');
+
+		fetch('https://api.chucknorris.io/jokes/random')
+		  .then(response => response.json())
+		  .then(data => {
+		    joke.textContent = data.value;
+		  })
+		  .catch(error => {
+		    console.error('Ошибка при выполнении запроса:', error);
+		  });	
+	</script>
 
 </body>
 </html>
