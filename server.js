@@ -13,8 +13,6 @@ const server = http.createServer((req, res) => {
 
   	
 
-  	// htmlSender.fsreader(html + 'style.css', res);
-
 	  // if (req.url !== '/reg.html') {
 	  //   res.statusCode = 302;
 	  //   res.setHeader('Location', 'reg.html');
